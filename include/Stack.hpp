@@ -57,5 +57,8 @@ const T &Stack<T>::head() const {
 }
 
 template <typename T>
-Stack<T>::~Stack(){}
+Stack<T>::~Stack(){
+    while (head_ != nullptr)
+      pop();
+}
 #endif // INCLUDE_STACK_H_
