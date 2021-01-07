@@ -1,4 +1,4 @@
-// Copyright 2020 Your Name <your_email>
+// Copyright 2020 Nikita Klimov nik179804@gmail.com
 
 #ifndef INCLUDE_STACK_H_
 #define INCLUDE_STACK_H_
@@ -15,6 +15,13 @@ struct Element {
 template <typename T>
 class Stack {
  public:
+  Stack() = default;
+  Stack(Stack &&st) noexcept = default;
+  Stack(const Stack &st) = delete;
+
+  auto operator=(Stack &&st) noexcept -> Stack & = default;
+  auto operator=(const Stack &st) -> Stack & = delete;
+
   void push(T&& value);
   void push(const T& value);
   void pop();
