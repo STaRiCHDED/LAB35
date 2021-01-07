@@ -19,7 +19,7 @@ class Stack {
   void push(const T& value);
   void pop();
   const T& head() const;
-
+  ~Stack();
 
  protected:
   Element<T> *head_ = nullptr;
@@ -56,4 +56,6 @@ const T &Stack<T>::head() const {
   return head_->value;
 }
 
+template <typename T>
+Stack<T>::~Stack(){}
 #endif // INCLUDE_STACK_H_
